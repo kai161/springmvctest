@@ -18,5 +18,17 @@
 
     <bean id="useraspects" class="com.bean.UserAspects" />
 
+    <bean id="properties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:config.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="propertiesReader" class="com.bean.PropertiesReader">
+        <property name="name" value="${config.name}"></property>
+        <property name="address" value="${config.address}"></property>
+    </bean>
 
 </beans>

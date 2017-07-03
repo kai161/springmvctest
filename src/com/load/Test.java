@@ -2,6 +2,7 @@ package com.load;
 
 import com.bean.BeanTest;
 import com.bean.Config;
+import com.bean.PropertiesReader;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -26,5 +27,11 @@ public class Test {
         System.out.println(config.address);
         System.out.println(config.time);
         System.out.println(config.version);
+
+
+        PropertiesReader propertiesReader=(PropertiesReader) classPathXmlApplicationContext.getBean("propertiesReader");
+
+        System.out.println(propertiesReader.getName());
+        System.out.println(propertiesReader.getAddress());
     }
 }
