@@ -31,4 +31,27 @@
         <property name="address" value="${config.address}"></property>
     </bean>
 
+    <!--messageSouce扩展-->
+    <bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>format</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="messageSourceBean" class="com.bean.messagesource.MessageSourceBean"></bean>
+    
+    
+    <!--event-->
+    <bean id="emailServer" class="com.bean.event.EmailServer">
+        <property name="blackList">
+            <list>
+                <value>1@126.com</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="blackEventNotifier" class="com.bean.event.BlackEventNotifier">
+        <property name="notifierAddr" value="kai@126.com"></property>
+    </bean>
+
 </beans>
