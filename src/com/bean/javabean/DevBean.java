@@ -11,7 +11,7 @@ import org.springframework.context.annotation.PropertySource;
  * 通过使用注解来实现容器具体装载的bean
  */
 @Configuration
-@Profile("DEV")
+//@Profile("DEV")
 public class DevBean {
 
     @Bean

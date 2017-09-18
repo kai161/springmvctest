@@ -67,6 +67,7 @@ public class Test {
 
         //event 使用, 事件通知是同步进行的
         ClassPathXmlApplicationContext classPathXmlApplicationContext=new ClassPathXmlApplicationContext("classpath:ApplicationContext.xml");
+        String[] beanName=classPathXmlApplicationContext.getBeanDefinitionNames();
         EmailServer emailServer=(EmailServer)classPathXmlApplicationContext.getBean(EmailServer.class);
         emailServer.sendEmail("1@126.com");
         emailServer.sendEmail("2@126.com");
